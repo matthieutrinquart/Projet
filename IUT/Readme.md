@@ -8,3 +8,5 @@ Ce projet java consister a simuler les accords d'une guitard en utilisanr les ou
 Ce projet PHP consistait à créer un site qui met en relation des stagiaires et des entreprise (plus d'information dans la docs)
 ## Projet THREEJS
 Ce projet consister à créer un rendu 3D en javascript avec la blibliothèque THREEJS
+## Projet fin IUT
+Ce projet consiste à faire un rendu 3D en OpenGL exécuter sur plusieur PC dans un même réseau.
