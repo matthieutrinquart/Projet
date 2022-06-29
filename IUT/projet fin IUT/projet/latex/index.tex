@@ -1,0 +1,22 @@
+\hypertarget{index_Introduction}{}\doxysection{Introduction}\label{index_Introduction}
+\hypertarget{index_Sujet}{}\doxysubsection{Sujet}\label{index_Sujet}
+Open\+GL permet le rendu de scène 3D dans un bitmap. Si l’environnement 3D contient des données ~\newline
+de grande taille, il est difficile voire impossible d’en effectuer le rendu (transmission sur la carte ~\newline
+graphique, mémoire insuffisante sur celle-\/ci). La proposition de ce projet est donc de diviser la ~\newline
+scène en complexité, en répartissant les données 3D sur plusieurs fenêtres, de manière synchrone. ~\newline
+Tous les rendus doivent donc être synchronisés sur les interactions (clavier ou souris pour faire ~\newline
+tourner l’objet, ou zoomer). La 2e étape de ce projet sera d’effectuer une distribution de données 3D ~\newline
+sur des machines reliés en réseau, via \mbox{\hyperlink{classOpenMPI}{Open\+M\+PI}} et d’en faire le rendu sur chaque machine. ~\newline
+L’application devra être développée en C++, avec Open\+Mesh pour la lecture de fichier 3D, Open\+GL ~\newline
+pour le rendu, S\+DL pour le (multi-\/) fenêtrage et les interactions, \mbox{\hyperlink{classOpenMPI}{Open\+M\+PI}} pour la distribution sur ~\newline
+plusieurs machines d’un réseau local et Doxygen pour la documentation des fonctions et classes. ~\newline
+Les temps de lecture de fichier, division des données, échange réeau et rendu devront être mesurés ~\newline
+et comparés sur plusieurs objets ou sur plusieurs définitions de surface. ~\newline
+ \hypertarget{index_Installation}{}\doxysubsection{Installation}\label{index_Installation}
+L\textquotesingle{}installation doit-\/être faite sur linux. ~\newline
+ Les machines doivent avoir d\textquotesingle{}installer open\+M\+PI version 4.\+0.\+3, open\+Mesh version 8.\+1, open\+GL et S\+D\+L2 pour fonctionné ~\newline
+ Pour compiler le programme executer la ligne de compilation suivant dans un terminal ouvert dans le dossier ou sont situé les programmes. ~\newline
+ mpi\+CC -\/Wall -\/std=c++11 $\ast$.cpp -\/o main -\/l\+G\+L\+EW -\/l\+GL -\/l\+G\+LU -\/l\+S\+D\+L2 -\/l\+Open\+Mesh\+Core ~\newline
+ Puis ensuite mettre le programme dans un cluster avec l\textquotesingle{}objet 3D et exécuté la commande \+: ~\newline
+ Puis ensuite mettre le programme dans un cluster avec l\textquotesingle{}objet 3D et exécuté la commande \+: ~\newline
+ mpirun -\/np 5 -\/ hosts client,master ./main 

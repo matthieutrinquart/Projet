@@ -1,0 +1,10 @@
+site_name: Docs
+
+nav :
+    - Presentation : Presentation.md
+    - Realisation : Realisation.md
+    - Analyse : Analyse.md
+    - Utilisation : Utilisation.md
+    - Conclusion : conclusion.md
+
+theme: readthedocs

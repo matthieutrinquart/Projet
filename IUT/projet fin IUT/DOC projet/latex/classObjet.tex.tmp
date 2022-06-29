@@ -1,0 +1,216 @@
+\hypertarget{classObjet}{}\doxysection{Objet Class Reference}
+\label{classObjet}\index{Objet@{Objet}}
+
+
+Classe \mbox{\hyperlink{classObjet}{Objet}}.  
+
+
+
+
+{\ttfamily \#include $<$Objet.\+hpp$>$}
+
+
+
+Collaboration diagram for Objet\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjet_a61f85a38db6646beb627db3c12c21e99}{Objet}} (unsigned char \+\_\+proc\+\_\+id)
+\item 
+\mbox{\hyperlink{classObjet_a8d9fa6fa05b9f5a99ab60d08f6b558ee}{$\sim$\+Objet}} ()
+\item 
+void \mbox{\hyperlink{classObjet_ad59509044aa1a199321626bc9cd2e817}{init}} ()
+\item 
+bool \mbox{\hyperlink{classObjet_aefce88ddced0b2bdac99148129a3e4e4}{display}} ()
+\item 
+void \mbox{\hyperlink{classObjet_aff9c94c327a5aa5603dc661a34f10c9f}{Read}} (std\+::string File)
+\item 
+void \mbox{\hyperlink{classObjet_af0926cd37a7866c52a2417d4dbf8d028}{Dessiner}} ()
+\item 
+void \mbox{\hyperlink{classObjet_a21f2d8d4c59ec6b66b1c74f0798ed1d8}{Centroid}} ()
+\item 
+void \mbox{\hyperlink{classObjet_a7ae552d33914d97a5d659cd92ba37bd2}{init\+V\+BO}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classObjet_addfbacf974fe88e8b677937d39d9d682}{angleX}} = 0
+\item 
+float \mbox{\hyperlink{classObjet_a8464ad5787ab9973d87cf7f2461a41e3}{angleY}} = 0
+\item 
+float \mbox{\hyperlink{classObjet_ac1223692f7a54815961296aa32111404}{angleZ}} = 0
+\item 
+float \mbox{\hyperlink{classObjet_a502405db13347a863f9545f07a9d512e}{zoom}} = 0
+\item 
+unsigned char \mbox{\hyperlink{classObjet_a92ff2dbe13f97908771b9e6d5ce7e190}{proc\+\_\+id}}
+\item 
+G\+Luint \mbox{\hyperlink{classObjet_a6c98cb9e540d238ab87d4d1379e7b2da}{V\+B\+O\+Sommets}}
+\item 
+My\+Mesh \mbox{\hyperlink{classObjet_a1c7d095baf4ad5c19fbaf311160bbd9a}{point}}
+\item 
+\mbox{\hyperlink{structpoint3D}{point3D}} \mbox{\hyperlink{classObjet_a807f218e75e606abe9c86824864a7694}{cen}}
+\item 
+\mbox{\hyperlink{structpoint3D}{point3D}} $\ast$ \mbox{\hyperlink{classObjet_aeac35dffd0eb5dd4a178f591dac0eef1}{lsommets}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{classObjet}{Objet}}. 
+
+Cette Classe \mbox{\hyperlink{classObjet}{Objet}} permet de pouvoir lire un \mbox{\hyperlink{classObjet}{Objet}} 3D avec la librairy Open\+Mesh et de le déssiner grace à Open\+GL 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObjet_a61f85a38db6646beb627db3c12c21e99}\label{classObjet_a61f85a38db6646beb627db3c12c21e99}} 
+\index{Objet@{Objet}!Objet@{Objet}}
+\index{Objet@{Objet}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{Objet()}{Objet()}}
+{\footnotesize\ttfamily Objet\+::\+Objet (\begin{DoxyParamCaption}\item[{unsigned char}]{\+\_\+proc\+\_\+id }\end{DoxyParamCaption})}
+
+Constructeur de la classe \mbox{\hyperlink{classObjet}{Objet}} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+proc\+\_\+id} & c\textquotesingle{}est un unsigned char qui correspond au processus d\textquotesingle{}\mbox{\hyperlink{classOpenMPI}{Open\+M\+PI}} ou appartient l\textquotesingle{}objet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_a8d9fa6fa05b9f5a99ab60d08f6b558ee}{$\sim$\+Objet()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_a8d9fa6fa05b9f5a99ab60d08f6b558ee}\label{classObjet_a8d9fa6fa05b9f5a99ab60d08f6b558ee}} 
+\index{Objet@{Objet}!````~Objet@{$\sim$Objet}}
+\index{````~Objet@{$\sim$Objet}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{$\sim$Objet()}{~Objet()}}
+{\footnotesize\ttfamily Objet\+::$\sim$\+Objet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Déstructeur de la classe \mbox{\hyperlink{classObjet}{Objet}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_a61f85a38db6646beb627db3c12c21e99}{Objet()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObjet_a21f2d8d4c59ec6b66b1c74f0798ed1d8}\label{classObjet_a21f2d8d4c59ec6b66b1c74f0798ed1d8}} 
+\index{Objet@{Objet}!Centroid@{Centroid}}
+\index{Centroid@{Centroid}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{Centroid()}{Centroid()}}
+{\footnotesize\ttfamily void Objet\+::\+Centroid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permet de calculer le centre d\textquotesingle{}un objet 3D \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_ad59509044aa1a199321626bc9cd2e817}{init()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_af0926cd37a7866c52a2417d4dbf8d028}\label{classObjet_af0926cd37a7866c52a2417d4dbf8d028}} 
+\index{Objet@{Objet}!Dessiner@{Dessiner}}
+\index{Dessiner@{Dessiner}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{Dessiner()}{Dessiner()}}
+{\footnotesize\ttfamily void Objet\+::\+Dessiner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Fonction permetant d\textquotesingle{}afficher l\textquotesingle{}entiereté de l\textquotesingle{}\mbox{\hyperlink{classObjet}{Objet}} 3D \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_ad59509044aa1a199321626bc9cd2e817}{init()}} 
+
+\mbox{\hyperlink{classObjet_aefce88ddced0b2bdac99148129a3e4e4}{display()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_aefce88ddced0b2bdac99148129a3e4e4}\label{classObjet_aefce88ddced0b2bdac99148129a3e4e4}} 
+\index{Objet@{Objet}!display@{display}}
+\index{display@{display}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily bool Objet\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Affichage de chaque parti de l\textquotesingle{}objet 3D grace à Open\+GL \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_af0926cd37a7866c52a2417d4dbf8d028}{Dessiner()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_ad59509044aa1a199321626bc9cd2e817}\label{classObjet_ad59509044aa1a199321626bc9cd2e817}} 
+\index{Objet@{Objet}!init@{init}}
+\index{init@{init}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Objet\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialisation de l\textquotesingle{}objet 3D(lecture du fichier 3\+D , initialisation V\+B\+O , calcule centroid ,premier affichage) \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_a7ae552d33914d97a5d659cd92ba37bd2}{init\+V\+B\+O()}} 
+
+\mbox{\hyperlink{classObjet_aefce88ddced0b2bdac99148129a3e4e4}{display()}} 
+
+\mbox{\hyperlink{classObjet_aff9c94c327a5aa5603dc661a34f10c9f}{Read(std\+::string File)}} 
+
+\mbox{\hyperlink{classObjet_af0926cd37a7866c52a2417d4dbf8d028}{Dessiner()}} 
+
+\mbox{\hyperlink{classObjet_a21f2d8d4c59ec6b66b1c74f0798ed1d8}{Centroid()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_a7ae552d33914d97a5d659cd92ba37bd2}\label{classObjet_a7ae552d33914d97a5d659cd92ba37bd2}} 
+\index{Objet@{Objet}!initVBO@{initVBO}}
+\index{initVBO@{initVBO}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{initVBO()}{initVBO()}}
+{\footnotesize\ttfamily void Objet\+::init\+V\+BO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialisation du V\+BO \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_ad59509044aa1a199321626bc9cd2e817}{init()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classObjet_aff9c94c327a5aa5603dc661a34f10c9f}\label{classObjet_aff9c94c327a5aa5603dc661a34f10c9f}} 
+\index{Objet@{Objet}!Read@{Read}}
+\index{Read@{Read}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void Objet\+::\+Read (\begin{DoxyParamCaption}\item[{std\+::string}]{File }\end{DoxyParamCaption})}
+
+Fonction servant à lire un fichier 3D grace à Open\+Mesh. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classObjet_ad59509044aa1a199321626bc9cd2e817}{init()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classObjet_addfbacf974fe88e8b677937d39d9d682}\label{classObjet_addfbacf974fe88e8b677937d39d9d682}} 
+\index{Objet@{Objet}!angleX@{angleX}}
+\index{angleX@{angleX}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{angleX}{angleX}}
+{\footnotesize\ttfamily float Objet\+::angleX = 0}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe X \mbox{\Hypertarget{classObjet_a8464ad5787ab9973d87cf7f2461a41e3}\label{classObjet_a8464ad5787ab9973d87cf7f2461a41e3}} 
+\index{Objet@{Objet}!angleY@{angleY}}
+\index{angleY@{angleY}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{angleY}{angleY}}
+{\footnotesize\ttfamily float Objet\+::angleY = 0}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe Y \mbox{\Hypertarget{classObjet_ac1223692f7a54815961296aa32111404}\label{classObjet_ac1223692f7a54815961296aa32111404}} 
+\index{Objet@{Objet}!angleZ@{angleZ}}
+\index{angleZ@{angleZ}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{angleZ}{angleZ}}
+{\footnotesize\ttfamily float Objet\+::angleZ = 0}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe Z \mbox{\Hypertarget{classObjet_a807f218e75e606abe9c86824864a7694}\label{classObjet_a807f218e75e606abe9c86824864a7694}} 
+\index{Objet@{Objet}!cen@{cen}}
+\index{cen@{cen}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{cen}{cen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpoint3D}{point3D}} Objet\+::cen}
+
+une variable qui enregistre le x,y,z du centroid de l\textquotesingle{}objet 3D \mbox{\Hypertarget{classObjet_aeac35dffd0eb5dd4a178f591dac0eef1}\label{classObjet_aeac35dffd0eb5dd4a178f591dac0eef1}} 
+\index{Objet@{Objet}!lsommets@{lsommets}}
+\index{lsommets@{lsommets}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{lsommets}{lsommets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpoint3D}{point3D}}$\ast$ Objet\+::lsommets}
+
+une variable qui enregistre le x,y,z de tout les points de l\textquotesingle{}objet 3D \mbox{\Hypertarget{classObjet_a1c7d095baf4ad5c19fbaf311160bbd9a}\label{classObjet_a1c7d095baf4ad5c19fbaf311160bbd9a}} 
+\index{Objet@{Objet}!point@{point}}
+\index{point@{point}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily My\+Mesh Objet\+::point}
+
+une variable qui enregistre l\textquotesingle{}objet 3D \mbox{\Hypertarget{classObjet_a92ff2dbe13f97908771b9e6d5ce7e190}\label{classObjet_a92ff2dbe13f97908771b9e6d5ce7e190}} 
+\index{Objet@{Objet}!proc\_id@{proc\_id}}
+\index{proc\_id@{proc\_id}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{proc\_id}{proc\_id}}
+{\footnotesize\ttfamily unsigned char Objet\+::proc\+\_\+id}
+
+un unsigned char qui enregistre qu\textquotesingle{}elle processus appartient l\textquotesingle{}objet \mbox{\Hypertarget{classObjet_a6c98cb9e540d238ab87d4d1379e7b2da}\label{classObjet_a6c98cb9e540d238ab87d4d1379e7b2da}} 
+\index{Objet@{Objet}!VBOSommets@{VBOSommets}}
+\index{VBOSommets@{VBOSommets}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{VBOSommets}{VBOSommets}}
+{\footnotesize\ttfamily G\+Luint Objet\+::\+V\+B\+O\+Sommets}
+
+un Gluint qui enregistre le V\+BO \mbox{\Hypertarget{classObjet_a502405db13347a863f9545f07a9d512e}\label{classObjet_a502405db13347a863f9545f07a9d512e}} 
+\index{Objet@{Objet}!zoom@{zoom}}
+\index{zoom@{zoom}!Objet@{Objet}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily float Objet\+::zoom = 0}
+
+Valeur Flotante corespondant au Zoom sur l\textquotesingle{}objet 3D 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Objet.\+hpp\item 
+Objet.\+cpp\end{DoxyCompactItemize}

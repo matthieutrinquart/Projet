@@ -1,0 +1,135 @@
+<div class="row">
+    <div #GRID1 id="GRID1" class="row">
+        <div #GRIDCOLUMN1 id="GRIDCOLUMN1" class="col s4">
+            <!--DOCKPANEL HERE-->
+            <ul #MENU1 id="MENU1" class="grey lighten-2 row">
+                <li #ITEM1 id="ITEM1" class="col s6">
+                    <button #BTN1 id="BTN1" (click)="ajouter(BTN1);">
+                        <img #IMG1 id="IMG1" src="assets/images/check.png" height="20px" width="20px">
+                        &nbsp;
+                        Ajouter
+                    </button>
+                </li>
+                <li #ITEM2 id="ITEM2" class="col s6">
+                    <button #BTN2 id="BTN2" (click)="supprimer(BTN2);">
+                        <img #IMG2 id="IMG2" src="assets/images/7098.png" height="20px" width="20px">
+                        &nbsp;
+                        Supprimer
+                    </button>
+                </li>
+            </ul>
+            <ul #1vUsers id="1vUsers" (click)="listView_Click($event)" *ngFor="let v of items">
+              <li>
+                  <!--TROUVER CORRESPONDANCE DATATEMPLATE ICI-->
+                  <!--TROUVER CORRESPONDANCE WRAPPANEL ICI-->
+                  <p #TEXTBLOCK1 class = "col s2" id="TEXTBLOCK1" style="font-weight:bold">
+                    {{v.Nom}}
+                  </p>
+                  <p #TEXTBLOCK2 class = "col s2" id="TEXTBLOCK2" style="font-weight:bold">
+                      &nbsp; <!--avoir un espace tout seul-->
+                  </p>
+                  <p #TEXTBLOCK3  class = "col s2" id="TEXTBLOCK3" style="font-weight:bold">
+                    {{v.Prenom}}
+                  </p>
+                  <p #TEXTBLOCK4  class = "col s2" id="TEXTBLOCK4" style="font-weight:bold">
+                      &nbsp; <!--avoir un espace tout seul-->
+                  </p>
+                  <p #TEXTBLOCK5 class = "col s2" id="TEXTBLOCK5" style="font-weight:bold">
+                    {{v.Age}}
+                  </p>
+                  <p #TEXTBLOCK6  class = "col s2" id="TEXTBLOCK6" style="font-weight:bold">
+                      &nbsp;ans
+                  </p>
+              </li>
+            </ul>
+        </div>
+        <div #GRIDCOLUMN2 id="GRIDCOLUMN2" class="row col s8">
+            <div #DIV1 id="DIV1" class="row col s6">
+                <p #TEXTBLOCK8 id="TEXTBLOCK8" class="col s4">
+                    Nom
+                </p>
+                <input #Nom id="Nom" type="text" class="col s6">
+            </div>
+            <div #DIV2 id="DIV2" class="row col s6">
+                <p #TEXTBLOCK7 id="TEXTBLOCK7" class="col s4">
+                    Prenom
+                </p>
+                <input #Prenom id="Prenom" type="text" class="col s6">
+            </div>
+            <div #DIV3 id="DIV3" class="row col s6">
+                <p #TEXTBLOCK9 id="TEXTBLOCK9" class="col s4">
+                    Numero
+                </p>
+                <input #Numero id="Numero" type="text" class="col s6">
+            </div>
+            <div #DIV4 id="DIV4" class="row col s6">
+                <p #TEXTBLOCK10 id="TEXTBLOCK10" class="col s4">
+                    Age
+                </p>
+                <input #Age id="Age" type="text" class="col s6">
+            </div>
+            <div #DIV5 id="DIV5" class="row col s6">
+                <p #TEXTBLOCK11 id="TEXTBLOCK11" class="col s4">
+                    Adresse
+                </p>
+                <input #Adresse id="Adresse" type="text" class="col s6">
+            </div>
+            <div #DIV6 id="DIV6" class="row col s6">
+                <p #TEXTBLOCK12 id="TEXTBLOCK12" class="col s4">
+                    Societe
+                </p>
+                <input #Societe id="Societe" type="text" class="col s6">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  <!--<div class="row">
+      <div class="blue lighten-5 col s3">
+          <div class="row">
+              <div class="col s6">
+                  <img src="assets/images/check.png" height="20px" width="20px">
+                  <button class="grey lighten-2" type="button">Ajouter</button>
+              </div>
+              <div class="col s6">
+                  <img src="assets/images/7098.png" height="20px" width="20px">
+                  <button class="grey lighten-2" type="button">Supprimer</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="col s9">
+          <div class="row">
+              <div class="col s4">
+                  <label class="col s4">Nom :</label>
+                  <input type="text" id="nom" class="col s8">
+              </div>
+              <div class="col s4">
+                  <label class="col s4">Prenom :</label>
+                  <input type="text" id="prenom" class="col s8">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col s4">
+                  <label class="col s4">Age :</label>
+                  <input type="text" id="age" class="col s8">
+              </div>
+              <div class="col s4">
+                  <label class="col s4">Numéro :</label>
+                  <input type="text" id="numero" class="col s8">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col s4">
+                  <label class="col s4">Adresse :</label>
+                  <input type="text" id="adresse" class="col s8">
+              </div>
+              <div class="col s4">
+                  <label class="col s4">Société :</label>
+                  <input type="text" id="societe" class="col s8">
+              </div>
+          </div>
+      </div>
+  -->

@@ -1,0 +1,216 @@
+\hypertarget{classSceneGlobal}{}\doxysection{Scene\+Global Class Reference}
+\label{classSceneGlobal}\index{SceneGlobal@{SceneGlobal}}
+
+
+Classe gérant l\textquotesingle{}affichage de la fenetre S\+DL.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Global.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneGlobal_a7cb8064f134b853867b044ec50730ae1}{Scene\+Global}} (std\+::string titre\+Fenetre, unsigned short int largeur\+Fenetre, unsigned short int hauteur\+Fenetre)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSceneGlobal_ad74ae85c097c7542e06a7666d59ef6f0}{$\sim$\+Scene\+Global}} ()
+\begin{DoxyCompactList}\small\item\em destructeur de la classe \mbox{\hyperlink{classSceneGlobal}{Scene\+Global}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSceneGlobal_affd7773454257301f2c0bd0448c16084}{initialiser\+Fenetre}} ()
+\begin{DoxyCompactList}\small\item\em initialisation des paramètres de la fenetre S\+DL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneGlobal_ab54fcf741faddc94425b1c8796e085c8}{boucle\+Principale}} ()
+\begin{DoxyCompactList}\small\item\em Boucle principal de la fenetre S\+DL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSceneGlobal_a39d34b844f2d72137f6cc83317b69da8}\label{classSceneGlobal_a39d34b844f2d72137f6cc83317b69da8}} 
+void \mbox{\hyperlink{classSceneGlobal_a39d34b844f2d72137f6cc83317b69da8}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em fonction qui reçois les bitmaps de chaque classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} et les affiches. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSceneGlobal_a7bc4d1aab319b179ed5326a9341dfc22}\label{classSceneGlobal_a7bc4d1aab319b179ed5326a9341dfc22}} 
+void \mbox{\hyperlink{classSceneGlobal_a7bc4d1aab319b179ed5326a9341dfc22}{Envoie}} ()
+\begin{DoxyCompactList}\small\item\em fonction qui envoi les modifications de rotations et de zoom de l\textquotesingle{}objet àclasse \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classSceneGlobal_a8c9955aa4256818a304b067e50ae915a}{m\+\_\+titre\+Fenetre}}
+\item 
+unsigned short int \mbox{\hyperlink{classSceneGlobal_a62cd22db8b738d92f7a320bd79607636}{m\+\_\+largeur\+Fenetre}}
+\item 
+unsigned short int \mbox{\hyperlink{classSceneGlobal_a5ac107c278f5a022a0df74cef2075dc6}{m\+\_\+hauteur\+Fenetre}}
+\item 
+float \mbox{\hyperlink{classSceneGlobal_ab98050413ff92b501f55a4f2dd9f5efc}{angleX}} = 0
+\item 
+float \mbox{\hyperlink{classSceneGlobal_a88b4d323aad698dc129bfcf629850319}{angleY}} = 0
+\item 
+float \mbox{\hyperlink{classSceneGlobal_af2bc8fd4330763d70611b0fc1d05dc7c}{angleZ}} = 0
+\item 
+float \mbox{\hyperlink{classSceneGlobal_acc4dea2751fb2dc38dd36867ab289fec}{zoom}} = 0
+\item 
+bool \mbox{\hyperlink{classSceneGlobal_ac783dcdf47ff37e8cd6ca6ea86905867}{etat}} = true
+\item 
+S\+D\+L\+\_\+\+Rect $\ast$ \mbox{\hyperlink{classSceneGlobal_afed414462b1d7a7362e15437c263a1e2}{dest}}
+\item 
+S\+D\+L\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classSceneGlobal_a345d2f901e8d15720b616704428413f6}{surf}}
+\item 
+unsigned char $\ast$ \mbox{\hyperlink{classSceneGlobal_a291a5c5d5b4a75aea98313458bfa82fc}{pixels}}
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{classSceneGlobal_a1d0fab8139cddc4e8e067db66de0fdfb}{m\+\_\+fenetre}}
+\item 
+S\+D\+L\+\_\+\+Event \mbox{\hyperlink{classSceneGlobal_ad4c54ef0c01c501b5ac34917c6ee1cc9}{evenements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe gérant l\textquotesingle{}affichage de la fenetre S\+DL. 
+
+Cette classe permet d\textquotesingle{}afficher une fenetre S\+DL qui va contenir l\textquotesingle{}entiereté de l\textquotesingle{}objet 3D 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSceneGlobal_a7cb8064f134b853867b044ec50730ae1}\label{classSceneGlobal_a7cb8064f134b853867b044ec50730ae1}} 
+\index{SceneGlobal@{SceneGlobal}!SceneGlobal@{SceneGlobal}}
+\index{SceneGlobal@{SceneGlobal}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{SceneGlobal()}{SceneGlobal()}}
+{\footnotesize\ttfamily Scene\+Global\+::\+Scene\+Global (\begin{DoxyParamCaption}\item[{std\+::string}]{titre\+Fenetre,  }\item[{unsigned short int}]{largeur\+Fenetre,  }\item[{unsigned short int}]{hauteur\+Fenetre }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titre\+Fenetre} & une chaine de caractère qui correspond au titre de la fenetre. \\
+\hline
+{\em largeur\+Fenetre} & un unsigned short int qui correspond a la largeur de la fenetre. \\
+\hline
+{\em hauteur\+Fenetre} & un unsigned short int qui correspond a la hauteur de la fenetre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classSceneGlobal_ad74ae85c097c7542e06a7666d59ef6f0}{$\sim$\+Scene\+Global()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classSceneGlobal_ad74ae85c097c7542e06a7666d59ef6f0}\label{classSceneGlobal_ad74ae85c097c7542e06a7666d59ef6f0}} 
+\index{SceneGlobal@{SceneGlobal}!````~SceneGlobal@{$\sim$SceneGlobal}}
+\index{````~SceneGlobal@{$\sim$SceneGlobal}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneGlobal()}{~SceneGlobal()}}
+{\footnotesize\ttfamily Scene\+Global\+::$\sim$\+Scene\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructeur de la classe \mbox{\hyperlink{classSceneGlobal}{Scene\+Global}} 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classSceneGlobal_a7cb8064f134b853867b044ec50730ae1}{Scene\+Global()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSceneGlobal_ab54fcf741faddc94425b1c8796e085c8}\label{classSceneGlobal_ab54fcf741faddc94425b1c8796e085c8}} 
+\index{SceneGlobal@{SceneGlobal}!bouclePrincipale@{bouclePrincipale}}
+\index{bouclePrincipale@{bouclePrincipale}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{bouclePrincipale()}{bouclePrincipale()}}
+{\footnotesize\ttfamily void Scene\+Global\+::boucle\+Principale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Boucle principal de la fenetre S\+DL. 
+
+Boucle principal de la fenetre S\+DL ou l\textquotesingle{}on gère les évènements de la fenetre , l\textquotesingle{}affichage de l\textquotesingle{}objet avec la classe objet.\+Elle s\textquotesingle{}occupe aussi de récupérer les bitmaps envoyé par les classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} et de l\textquotesingle{}afficher sur la fenetre principal. et envois au classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} les consignes de modification a faire sur la rotation et de zoom de l\textquotesingle{}objet 3D. \mbox{\Hypertarget{classSceneGlobal_affd7773454257301f2c0bd0448c16084}\label{classSceneGlobal_affd7773454257301f2c0bd0448c16084}} 
+\index{SceneGlobal@{SceneGlobal}!initialiserFenetre@{initialiserFenetre}}
+\index{initialiserFenetre@{initialiserFenetre}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{initialiserFenetre()}{initialiserFenetre()}}
+{\footnotesize\ttfamily bool Scene\+Global\+::initialiser\+Fenetre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialisation des paramètres de la fenetre S\+DL. 
+
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}initialisation de la fenetre c\textquotesingle{}est bien dérouler false sinon 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSceneGlobal_ab98050413ff92b501f55a4f2dd9f5efc}\label{classSceneGlobal_ab98050413ff92b501f55a4f2dd9f5efc}} 
+\index{SceneGlobal@{SceneGlobal}!angleX@{angleX}}
+\index{angleX@{angleX}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{angleX}{angleX}}
+{\footnotesize\ttfamily float Scene\+Global\+::angleX = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe X \mbox{\Hypertarget{classSceneGlobal_a88b4d323aad698dc129bfcf629850319}\label{classSceneGlobal_a88b4d323aad698dc129bfcf629850319}} 
+\index{SceneGlobal@{SceneGlobal}!angleY@{angleY}}
+\index{angleY@{angleY}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{angleY}{angleY}}
+{\footnotesize\ttfamily float Scene\+Global\+::angleY = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe Y \mbox{\Hypertarget{classSceneGlobal_af2bc8fd4330763d70611b0fc1d05dc7c}\label{classSceneGlobal_af2bc8fd4330763d70611b0fc1d05dc7c}} 
+\index{SceneGlobal@{SceneGlobal}!angleZ@{angleZ}}
+\index{angleZ@{angleZ}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{angleZ}{angleZ}}
+{\footnotesize\ttfamily float Scene\+Global\+::angleZ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Valeur Flotante corespondant à la valeur en degrès de la position de l\textquotesingle{}objet autour de l\textquotesingle{}axe Z \mbox{\Hypertarget{classSceneGlobal_afed414462b1d7a7362e15437c263a1e2}\label{classSceneGlobal_afed414462b1d7a7362e15437c263a1e2}} 
+\index{SceneGlobal@{SceneGlobal}!dest@{dest}}
+\index{dest@{dest}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{dest}{dest}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect$\ast$ Scene\+Global\+::dest\hspace{0.3cm}{\ttfamily [private]}}
+
+Carré qui va contenir une partie de l\textquotesingle{}objet 3D et qui assembler formera l\textquotesingle{}objet 3D dans son entièreté \mbox{\Hypertarget{classSceneGlobal_ac783dcdf47ff37e8cd6ca6ea86905867}\label{classSceneGlobal_ac783dcdf47ff37e8cd6ca6ea86905867}} 
+\index{SceneGlobal@{SceneGlobal}!etat@{etat}}
+\index{etat@{etat}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{etat}{etat}}
+{\footnotesize\ttfamily bool Scene\+Global\+::etat = true\hspace{0.3cm}{\ttfamily [private]}}
+
+un boolean qui est sur vrai pour que la fenetre S\+DL reste a l\textquotesingle{}ecran et faux pour que la fenetre S\+DL disparaissent \mbox{\Hypertarget{classSceneGlobal_ad4c54ef0c01c501b5ac34917c6ee1cc9}\label{classSceneGlobal_ad4c54ef0c01c501b5ac34917c6ee1cc9}} 
+\index{SceneGlobal@{SceneGlobal}!evenements@{evenements}}
+\index{evenements@{evenements}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{evenements}{evenements}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Event Scene\+Global\+::evenements\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable contenant les interaction faite avec la fenetre S\+DL \mbox{\Hypertarget{classSceneGlobal_a1d0fab8139cddc4e8e067db66de0fdfb}\label{classSceneGlobal_a1d0fab8139cddc4e8e067db66de0fdfb}} 
+\index{SceneGlobal@{SceneGlobal}!m\_fenetre@{m\_fenetre}}
+\index{m\_fenetre@{m\_fenetre}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{m\_fenetre}{m\_fenetre}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ Scene\+Global\+::m\+\_\+fenetre\hspace{0.3cm}{\ttfamily [private]}}
+
+pointeur sur S\+D\+L\+\_\+\+Window qui permet d\textquotesingle{}afficher une fenetre avec S\+DL \mbox{\Hypertarget{classSceneGlobal_a5ac107c278f5a022a0df74cef2075dc6}\label{classSceneGlobal_a5ac107c278f5a022a0df74cef2075dc6}} 
+\index{SceneGlobal@{SceneGlobal}!m\_hauteurFenetre@{m\_hauteurFenetre}}
+\index{m\_hauteurFenetre@{m\_hauteurFenetre}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{m\_hauteurFenetre}{m\_hauteurFenetre}}
+{\footnotesize\ttfamily unsigned short int Scene\+Global\+::m\+\_\+hauteur\+Fenetre\hspace{0.3cm}{\ttfamily [private]}}
+
+un unsigned short int qui contiendra la hauteur de la fenetre S\+DL \mbox{\Hypertarget{classSceneGlobal_a62cd22db8b738d92f7a320bd79607636}\label{classSceneGlobal_a62cd22db8b738d92f7a320bd79607636}} 
+\index{SceneGlobal@{SceneGlobal}!m\_largeurFenetre@{m\_largeurFenetre}}
+\index{m\_largeurFenetre@{m\_largeurFenetre}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{m\_largeurFenetre}{m\_largeurFenetre}}
+{\footnotesize\ttfamily unsigned short int Scene\+Global\+::m\+\_\+largeur\+Fenetre\hspace{0.3cm}{\ttfamily [private]}}
+
+un unsigned short int qui contiendra la largeur de la fenetre S\+DL \mbox{\Hypertarget{classSceneGlobal_a8c9955aa4256818a304b067e50ae915a}\label{classSceneGlobal_a8c9955aa4256818a304b067e50ae915a}} 
+\index{SceneGlobal@{SceneGlobal}!m\_titreFenetre@{m\_titreFenetre}}
+\index{m\_titreFenetre@{m\_titreFenetre}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{m\_titreFenetre}{m\_titreFenetre}}
+{\footnotesize\ttfamily std\+::string Scene\+Global\+::m\+\_\+titre\+Fenetre\hspace{0.3cm}{\ttfamily [private]}}
+
+une chaine de caractère correspondant au titre de la fenetre S\+DL \mbox{\Hypertarget{classSceneGlobal_a291a5c5d5b4a75aea98313458bfa82fc}\label{classSceneGlobal_a291a5c5d5b4a75aea98313458bfa82fc}} 
+\index{SceneGlobal@{SceneGlobal}!pixels@{pixels}}
+\index{pixels@{pixels}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{pixels}{pixels}}
+{\footnotesize\ttfamily unsigned char$\ast$ Scene\+Global\+::pixels\hspace{0.3cm}{\ttfamily [private]}}
+
+Pointeur sur un tableau de unsigned char qui va contenir la bitmaps a recevoir de \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} \mbox{\Hypertarget{classSceneGlobal_a345d2f901e8d15720b616704428413f6}\label{classSceneGlobal_a345d2f901e8d15720b616704428413f6}} 
+\index{SceneGlobal@{SceneGlobal}!surf@{surf}}
+\index{surf@{surf}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{surf}{surf}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Surface$\ast$ Scene\+Global\+::surf\hspace{0.3cm}{\ttfamily [private]}}
+
+Argument qui va mettre la bitmaps reçu dans un carré et l\textquotesingle{}afficher \mbox{\Hypertarget{classSceneGlobal_acc4dea2751fb2dc38dd36867ab289fec}\label{classSceneGlobal_acc4dea2751fb2dc38dd36867ab289fec}} 
+\index{SceneGlobal@{SceneGlobal}!zoom@{zoom}}
+\index{zoom@{zoom}!SceneGlobal@{SceneGlobal}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily float Scene\+Global\+::zoom = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Valeur Flotante corespondant au Zoom sur l\textquotesingle{}objet 3D 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SceneGlobal_8hpp}{Scene\+Global.\+hpp}}\item 
+\mbox{\hyperlink{SceneGlobal_8cpp}{Scene\+Global.\+cpp}}\end{DoxyCompactItemize}

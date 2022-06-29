@@ -1,0 +1,44 @@
+
+
+<div class="wrapper">
+  <div *ngFor="let a of aff" class="card">
+    <img  src="http://w3codegenerator.com/img/sample-image/new_zealand-300x225.jpg" class="card-img-top" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{a.recette.nom}}</h5>
+      <div *ngFor="let val of a.ingr" >
+        <p> {{val.nom}}  {{val.nombre}} {{val.uniter}}</p>
+      </div>
+      <h5 class="card-title">Mode de cuisson : {{a.recette.modeCuissin}}</h5>
+      <h5 class="card-title">Prix : {{a.prix}} €</h5>
+      <br>
+      <h5 class="card-title" Align=Center>COMMENTAIRE</h5>
+      <div class="container" *ngIf="this.user != null" >
+        <form>
+          <fieldset>
+            <input id="oCategorieValeur" name="oCategorieValeur" type="hidden" value="0" />
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div id="oCategorieListe" class="dropdown-menu">
+                  <a class="dropdown-item" data-valeur="0" href="#">Catégorie</a>
+                  <a class="dropdown-item" data-valeur="1" href="#">...</a>
+                </div>
+              </div>
+              <input id="{{a.recette.nom}}" name="oSaisie"  value="" class="form-control" aria-label="Saisie de mots clés" placeholder="Nouveau commentaire" required="required">
+              <div class="input-group-append">
+                <button class="btn btn-primary"  (click)="newcommentaire(a.recette.nom.toString())" type="submit">Poster</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div *ngFor="let val of a.commentaire" Align=Center>
+        <p> {{val.peudo}} : {{val.commentaire}}  : {{val.date}}</p>
+      </div>
+     <p> Like : {{a.recette.Like.length}}</p> <button *ngIf="this.user != null" class="btn btn-primary" (click)="recherche(a.recette.nom.toString())" type="submit">Like</button>
+    </div>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

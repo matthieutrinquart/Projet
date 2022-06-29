@@ -1,0 +1,18 @@
+digraph "Point3D.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Point3D.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="création d'une structure d'un point en 3D. point3D"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Objet.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Objet_8hpp.html",tooltip="Atribut de la classe Objet."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="LsceneOpenGL.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LsceneOpenGL_8hpp.html",tooltip="Atribut de la classe LsceneOpenGL."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="LsceneOpenGL.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LsceneOpenGL_8cpp.html",tooltip="Fonctions de la classe LsceneOpenGL."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="programme principal."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Objet.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Objet_8cpp.html",tooltip="Fonction de la classe Objet."];
+}

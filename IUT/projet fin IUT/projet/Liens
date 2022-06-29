@@ -1,0 +1,4 @@
+mpirun -x DISPLAY=:0.0 -np 5 -hostfile my_hostfile ./main
+https://www.mail-archive.com/users@lists.open-mpi.org//msg15081.html
+https://community.oracle.com/thread/571326?start=0&tstart=0
+sudo mpiCC -Wall -std=c++11 *.cpp -o /home/projet/share/main -lGLEW -lGL -lGLU -lSDL2 -lOpenMeshCore

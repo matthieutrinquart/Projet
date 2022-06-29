@@ -1,0 +1,13 @@
+https://www.lirmm.fr/
+http://www.lirmm.fr/recherche/equipes
+http://www.lirmm.fr/le-lirmm/presentation
+http://www.lirmm.fr/recherche/plateformes/plateforme-informatique
+http://www.lirmm.fr/recherche/plateformes/plateforme-microelectronique
+https://www.lirmm.fr/lirmm_admin
+http://www.lirmm.fr/recherche/departements/mic
+http://www.lirmm.fr/le-lirmm/emplois
+http://www.lirmm.fr/recherche/plateformes/plateforme-robotique
+http://www.lirmm.fr/recherche/departements/info
+http://www.lirmm.fr/recherche/departements/rob
+http://www.lirmm.fr/recherche/plateformes/plateforme-microelectronique/mic-autres
+http://www.lirmm.fr/recherche/plateformes/plateforme-microelectronique/securite-cyber-physique

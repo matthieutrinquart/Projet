@@ -1,0 +1,8 @@
+[
+    {"email":"thomas.juliat@gmail.com","nom":"juliat", "prenom":"thomas","pseudo": "thomasdu34" ,"password" : "azerty"},
+    {"email":"martin.sanchez@gmail.com","nom":"sanchez", "prenom":"martin","pseudo": "martindu58","password" : "azerty"},
+    {"email":"matthieu.trinquart@gmail.com","nom":"trinquart", "prenom":"matthieu","pseudo": "matthieudu13","password" : "azerty"},
+    {"email":"gaetan.romero@gmail.com","nom":"romero", "prenom":"gaetan","pseudo": "gaetandu69","password" : "azerty"},
+    {"email":"lea.monot@gmail.com","nom":"monot", "prenom":"lea","pseudo": "Loopy","password" : "azerty"},
+    {"email":"test","nom":"test", "prenom":"test","pseudo": "peudotest","password" : "test"}
+]

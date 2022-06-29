@@ -1,0 +1,7 @@
+[
+    {"nom":"crèpe", "ingredient":[["farine" , 1] , ["oeuf" , 4] , ["levure" , 5] , ["lait" , 1]], "modeCuissin":"feux", "NombrePersonnes":10, "autheur" : "thomasdu34", "Like":["thomas.juliat@gmail.com" , "matthieu.trinquart@gmail.com"]},
+    {"nom":"Cidre", "ingredient":[["pomme" , 2] , ["sucre" , 0.5]], "modeCuissin":"pas de cuisson", "NombrePersonnes":1, "autheur" : "martindu58", "Like":["gaetan.romero@gmail.com" , "matthieu.trinquart@gmail.com"]},
+    {"nom":"soupe", "ingredient":[["citrouille" , 1] , ["pomme de terre" , 3] , ["sel" , 5]], "modeCuissin":"cocote", "NombrePersonnes":2, "autheur" : "matthieudu13", "Like":["martin.sanchez@gmail.com" , "matthieu.trinquart@gmail.com"]},
+    {"nom":"Paris-Brest", "ingredient":[["farine" , 1] , ["oeuf" , 2] , ["sucre" , 0.5] , ["lait" , 1]], "modeCuissin":"four", "NombrePersonnes":5, "autheur" : "Loopy", "Like":["thomas.juliat@gmail.com" , "lea.monot@gmail.com"]},
+    {"nom":"gateau chocolat", "ingredient":[["farine" , 0.75] , ["oeuf" , 2] , ["sucre" , 0.5] , ["lait" , 1] , ["chocolat" , 15]], "modeCuissin":"four", "NombrePersonnes":5, "autheur" : "peudotest", "Like":["test" , "matthieu.trinquart@gmail.com"]}
+]

@@ -1,0 +1,44 @@
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav mr-auto">
+    <li href="#" class="nav-item" routerLink="/recette" routerLinkActive="active">
+      <a class="nav-link">Liste de recette</a>
+    </li>
+    <li href="#" class="nav-item" routerLink="/connexion" routerLinkActive="active">
+      <a class="nav-link">Connexion</a>
+    </li>
+    <li href="#" class="nav-item" routerLink="/recherche" routerLinkActive="active">
+      <a class="nav-link">Recherche</a>
+    </li>
+    <!--
+    <md-card class="chamber wit" *ngIf="kamer.patient === null">
+      <p *ngIf="showId">{{kamer.id}}</p>
+    </md-card>
+    -->
+    <li href="#" class="nav-item" routerLink="/userrecette"*ngIf="this.user != null" routerLinkActive="active">
+      <a class="nav-link">Mes elements</a>
+    </li>
+    <li href="#" class="nav-item" routerLink="/newrecette"*ngIf="this.user != null" routerLinkActive="active">
+      <a class="nav-link">Créer une recette</a>
+    </li>
+  </ul>
+  <a class="navbar-brand" href="#"><img src="../assets/logo.jpg" style="width:64px;"></a>
+  <a class="navbar-brand" href="#">Marmiton</a>
+
+  <ul class="navbar-nav ml-auto">
+    <form class="form-inline" >
+      <a class="navbar-brand" (click)="deconnexion()" href="#">{{(user)?.pseudo}}</a>
+      <!--
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-success">Search</button>
+      -->
+    </form>
+  </ul>
+
+</nav>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+<router-outlet></router-outlet>

@@ -1,0 +1,4 @@
+/*Centre les éléments inline dans les éléments possédant un attribut class="centre"*/
+.centre{
+    text-align: center;
+  }

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title>TP3 Matthieu Trinquart</title>
+		</head>
+
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<style>
+			
+			#blocker {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.5);
+			}
+
+			#instructions {
+				width: 100%;
+				height: 100%;
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: box;
+
+				-webkit-box-orient: horizontal;
+				-moz-box-orient: horizontal;
+				box-orient: horizontal;
+
+				-webkit-box-pack: center;
+				-moz-box-pack: center;
+				box-pack: center;
+
+				-webkit-box-align: center;
+				-moz-box-align: center;
+				box-align: center;
+
+				color: #ffffff;
+				text-align: center;
+				font-family: Arial;
+				font-size: 14px;
+				line-height: 24px;
+
+				cursor: pointer;
+			}
+			</style>
+			<body>
+				<div id="blocker">
+
+					<div id="instructions">
+						<span style="font-size:36px">Click to play</span>
+						<br /><br />
+						Move: Z , Q , S ,D<br/>
+						Look: MOUSE
+					</div>
+
+				</div>
+
+
+
+
+
+				<div id="info"></div>
+				<script src="three.js/build/three.js"></script>
+				<script src="three.js/examples/js/controls/PointerLockControls.js"></script>
+				<script src="three.js/examples/js/loaders/OBJLoader.js"></script>
+				<script src="three.js/examples/js/loaders/MTLLoader.js"></script>
+				<script src="three.js/examples/js/libs/stats.min.js"></script>
+				<script>
+
+					// creation de la scene qui sera par defaut noir
+					var scene = new THREE.Scene();
+					scene.background = new THREE.Color("rgb(0, 0, 0)");
+
+
+
+					//creation des variables pour la vue en premiere personne et pour le deplacement
+					var moveForward = false;
+					var moveBackward = false;
+					var moveLeft = false;
+					var moveRight = false;
+					var prevTime = performance.now();
+					var velocity = new THREE.Vector3();
+					var direction = new THREE.Vector3();
+					var vertex = new THREE.Vector3();
+
+
+					//creation de la variable stats qui va permettre 
+					var stats = new Stats();
+					document.body.appendChild( stats.dom );
+
+
+
+
+					//creation de 2 lumieres  une ambiente pour bien voir le decors et une directionnelle pour avoir un effet d'ombre
+					var lumiere = new THREE.AmbientLight( 0x222222 ) ;
+					lumiere.position.set(0,50,0);
+					scene.add( lumiere );
+					var lumiere = new THREE.DirectionalLight( 0xffffff );
+					lumiere.position.set( 0, 50, 0 );
+					scene.add( lumiere );
+
+					
+					//creation d'un sol avec une texture de sol
+					var texture = new THREE.TextureLoader().load( './sol.png' );
+					texture.wrapS = THREE.RepeatWrapping;
+					texture.wrapT = THREE.RepeatWrapping;
+					texture.repeat.set( 10, 10 );
+					var geometry = new THREE.PlaneGeometry( 100, 100, 100 );
+					var material = new THREE.MeshPhongMaterial( { color: 0x00ff00, map: texture } );
+					var plane = new THREE.Mesh( geometry, material );
+					scene.add( plane );
+					plane.rotation.set(-Math.PI / 2, 0, 0);
+
+					
+					
+					
+					//fonction qui va permettre de créer des nombres aleatoire
+					function nombreAleatoire(min, max)
+					{
+						return Math.floor(Math.random() * (max - min + 1) ) + min;
+					} 
+
+
+					//déclaration d'une variable qui va stocker un ensemble de vache
+					var troupeau_vache = new THREE.Group();
+
+					//variable qui va stocker les différent objets de vaches suivant leur nombre de polygones et de leur qualité
+					var obj_high , obj_mid , obj_low ;
+
+					//bouléan qui va stocker si c'est une vache de faible,moyenne ou forte qualité 
+					var bool_high , bool_mid , bool_low ;
+
+					//création d'un LOD pour avoir les différentes qualité de vaches
+					var lod_vache = new THREE.LOD();
+
+					//MTLLoader pour charger les vaches
+					var mtlLoader = new THREE.MTLLoader();
+					//Donner le dossier ou son situer les vaches
+					mtlLoader.setPath("cow/");
+
+
+					//on met les bouleans par defaut a false
+					bool_high = false;
+					bool_mid = false;
+					bool_low = false ;
+
+					//Chargement du .mtl des vaches pur avoir l'objets et la texture de la vaches
+					mtlLoader.load( "cow.mtl", function( materials )
+					{
+						materials.preload();
+						//variable qui va permettre de charger l'objet
+						var objLoader = new THREE.OBJLoader();
+						objLoader.setMaterials( materials );
+						//On donne le dossier ou est situer l'objet
+						objLoader.setPath( 'cow/' );
+						//on charge la vache de bonne qualité 
+						objLoader.load( 'cow_high.obj',function ( obj )
+						{
+							//on sauvegarde l'objets dans obj_high
+							obj_high = obj ;
+							//et on indique que la vache est de qualité hight (Va servire dans la fonction animate)
+							bool_high = true ;
+							//on indique que l'objets est afficher a partir d'une distance de 0 de l'objets
+							lod_vache.addLevel(obj , 0);
+							//on charge la vache de qualité moyenne
+							objLoader.load( 'cow_mid.obj', function ( obj )
+							{
+								//on sauvegarde l'objets dans obj_mid
+								obj_mid = obj ;
+								//et on indique que la vache est de qualité mid (Va servire dans la fonction animate)
+								bool_mid = true ;
+								//on indique que l'objets est afficher a partir d'une distance de 10 de l'objets
+								lod_vache.addLevel(obj ,10);
+									//on charge la vache de basse qualité
+								objLoader.load('cow_low.obj' ,function(obj)
+								{
+									//et on indique que la vache est de qualité low (Va servire dans la fonction animate)
+									bool_low = true ;
+									//on sauvegarde l'objets dans bool_low
+									obj_low = obj ;
+									//on indique que l'objets est afficher a partir d'une distance de 20 de l'objets
+									lod_vache.addLevel(obj , 20);
+									//on declare une variable qui correspondera au nombre de vaches qu'il va y avoir 
+									var nb_vache = 100 ;
+									//boucle for qui permettre de faire apparraitre plusieur vache
+									for( var i = 0 ; i<=nb_vache ;++i)
+									{
+										//on tire aléatoirement  _x ,_y et x ui correspond au placement de la vaches sur le terrain et de son enriotation 
+										var _x = nombreAleatoire(-50, 50);
+										var _y = nombreAleatoire(-50, 50);
+										var x = nombreAleatoire(-50, 50);
+
+										//on clone la vache
+										var new_object = lod_vache.clone();
+										//on lui donnes les valeur de _x, _y et x pourla positionner dans le plan
+										new_object.position.set(_x,0,_y);
+										new_object.rotation.set(0,x,0);
+										//on ajoute la vache dans le troupeau 
+										troupeau_vache.add(new_object);
+									}
+								},function ( xhr )
+								{
+										console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+								},
+								function ( error )
+								{
+									console.error( "Erreur de chargement" );
+								} );
+							},function ( xhr )
+							{
+								console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+							},
+							function ( error )
+							{
+								console.error( "Erreur de chargement" );
+							} );
+						},function ( xhr )
+						{
+							console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+						},
+						function ( error )
+						{
+							console.error( "Erreur de chargement" );
+						} );
+					} );
+					//on ajoute le troupeau dans la scene
+					scene.add(troupeau_vache);
+				
+
+
+					//création de la camera et on la positionne
+					var camera = new THREE.PerspectiveCamera( 45,
+					window.innerWidth/window.innerHeight, 0.1, 10000 );
+					var renderer = new THREE.WebGLRenderer( {antialias: true} );
+					renderer.setSize( window.innerWidth, window.innerHeight );
+					document.body.appendChild( renderer.domElement );
+					camera.position.set( 0, 1.8, 0 );
+
+
+
+
+					//chargement des texture du ciel
+					var textures_skybox =
+					[
+						"skybox/xp.jpg", "skybox/xn.jpg",
+						"skybox/yp.jpg", "skybox/yn.jpg",
+						"skybox/zp.jpg", "skybox/zn.jpg",
+					];
+					//met la texture sur la scene
+					scene.background = new THREE.CubeTextureLoader().load( textures_skybox );
+
+				
+				
+					//creation d'un PointerLockControls pour une vue en premiere personne
+					controls = new THREE.PointerLockControls( camera, document.body );
+					//affichage des blocker et de instructions pour montrer les commande
+					var blocker = document.getElementById( 'blocker' );
+					var instructions = document.getElementById( 'instructions' );
+
+
+					//dès qu'il y a un click on active le lock du controleur
+					instructions.addEventListener( 'click', function ()
+					{
+
+						controls.lock();
+
+					}, false );
+
+
+					//on n'affiche plus le blocker et le instructions
+					controls.addEventListener( 'lock', function ()
+					{
+
+						instructions.style.display = 'none';
+						blocker.style.display = 'none';
+
+					} );
+
+
+					controls.addEventListener( 'unlock', function ()
+					{
+
+						blocker.style.display = 'block';
+						instructions.style.display = '';
+
+					} );
+					//on met le controleur dans la scene
+					scene.add( controls.getObject() );
+
+
+/*---------------------Cette partie sert a faire bouger la camera celon les touches Z Q S D qui sera gerer après dans l'animate--------------------------------*/
+					var onKeyDown = function ( event )
+					{
+
+						switch ( event.keyCode )
+						{
+
+							case 90: // Z
+							moveForward = true;
+							break;
+
+							case 81: // q
+							moveLeft = true;
+							break;
+
+							case 83: // s
+							moveBackward = true;
+							break;
+
+							case 68: // d
+							moveRight = true;
+							break;
+
+						}
+
+					};
+
+					var onKeyUp = function ( event )
+					{
+
+						switch ( event.keyCode )
+						{
+
+							case 90: // w
+								moveForward = false;
+								break;
+
+							case 81: // a
+								moveLeft = false;
+								break;
+
+							case 83: // s
+								moveBackward = false;
+								break;
+
+							case 68: // d
+								moveRight = false;
+								break;
+
+						}
+
+					};
+
+					document.addEventListener( 'keydown', onKeyDown, false );
+					document.addEventListener( 'keyup', onKeyUp, false );
+
+
+
+
+
+
+					var rainDrop , rainMaterial , rainGeo , rain;
+					//création d'une geométrie qui va faire office de pluis
+					rainGeo = new THREE.Geometry();
+					// création de 50000 goutes de pluis
+					for(let i=0;i<50000;i++)
+					{
+						//positionne les goutes de pluis de façon aléatoire
+						rainDrop = new THREE.Vector3(nombreAleatoire(-50, 50),nombreAleatoire(0, 50),nombreAleatoire(-50, 50));
+
+
+						rainDrop.velocity = {};
+						rainDrop.velocity = 0;
+						rainGeo.vertices.push(rainDrop);
+					}
+					//Met un materiaux transparent et une taille de 0.1 a la goute de pluis
+					rainMaterial = new THREE.PointsMaterial({color: 0xaaaaaa,size: 0.1,transparent: true});
+					rain = new THREE.Points(rainGeo,rainMaterial);
+					//ajoutes les goutes de pluis a la scene
+					scene.add(rain);
+
+
+
+
+
+					var animate = function ()
+					{
+						//dés que le controleur est en 'lock' le if s'execute et l'animation du mouvement de caméra s'execute
+						if ( controls.isLocked === true )
+						{
+
+
+							var time = performance.now();
+							var delta = ( time - prevTime ) / 1000;
+
+							velocity.x -= velocity.x * 10.0 * delta;
+							velocity.z -= velocity.z * 10.0 * delta;
+
+							direction.z = Number( moveForward ) - Number( moveBackward );
+							direction.x = Number( moveRight ) - Number( moveLeft );
+							direction.normalize(); // this ensures consistent movements in all directions
+
+							if ( moveForward || moveBackward ) velocity.z -= direction.z * 70.0 * delta;
+							if ( moveLeft || moveRight ) velocity.x -= direction.x * 70.0 * delta;
+
+
+							controls.moveRight( - velocity.x * delta );
+							controls.moveForward( - velocity.z * delta );
+
+							controls.getObject().position.y += ( velocity.y * delta ); 
+
+							if ( controls.getObject().position.y < 10 )
+							{
+
+								velocity.y = 0;
+								controls.getObject().position.y = 1.8;
+
+								canJump = true;
+
+							}
+
+							prevTime = time;
+
+						}
+
+
+
+
+
+						//animation des goutes d'eau qui tombe
+						rainGeo.vertices.forEach(p =>
+						{
+							p.velocity -= 0.1 + Math.random() * 0.1;
+							p.y += p.velocity;
+							if (p.y < 0)
+							{
+								p.y = 50;
+								p.velocity = 0;
+							}
+						});
+						rainGeo.verticesNeedUpdate = true;
+						rain.rotation.y +=0.02;
+
+
+						//Les vaches vont diminuer le nombre de polygones au file du temps que la camera s'eloigne
+						if(bool_high == true)
+						{
+							lod_vache.addLevel(obj_high , 0);
+
+							bool_high = false ;
+
+						}
+
+						if(bool_mid == true)
+						{
+							lod_vache.addLevel(obj_mid , 10);
+
+							bool_mid = false ;
+
+						}
+
+						if(bool_low == true)
+						{
+							lod_vache.addLevel(obj_low , 20);
+
+							bool_low = false ;
+
+						}
+
+						requestAnimationFrame( animate );
+
+
+						
+						scene.traverse( function ( object )
+						{
+							if ( object instanceof THREE.LOD )
+							{
+								object.update( camera );
+							}
+						} );
+						//affichage du nombre de polygones dans la scene 
+							 renderer.render( scene, camera );
+							 stats.update();
+							 document.getElementById("info").innerHTML = "Triangles : "+ renderer.info.render.triangles;
+					};
+				
+				
+				
+ 					animate();
+				</script>
+
+
+
+
+
+
+			<style>
+   				body
+				{
+					margin : 0px;
+					padding: 0px;
+					overflow: hidden;
+   				}
+   				#info
+				{
+					font-family: arial;
+					background-color :	rgba(0,0,0,0.5);
+					color: white;
+					position: absolute;
+					left : 10px;
+					bottom: 10px;
+					width : 200px;
+					padding : 1em;
+					z-index: 100; 
+   				}
+			</style>
+
+
+
+
+	</body>
+</html>

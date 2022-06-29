@@ -1,0 +1,12 @@
+[
+    {"nom":"citrouille", "prix": 10, "uniter":"kilo"},
+    {"nom":"farine", "prix": 5, "uniter":"kilo"},
+    {"nom":"sel", "prix": 10, "uniter":"gramme"},
+    {"nom":"oeuf", "prix":0.2, "uniter":"unité"},
+    {"nom":"lait", "prix": 5, "uniter":"litre"},
+    {"nom":"pomme", "prix": 1, "uniter":"unité"},
+    {"nom":"pomme de terre", "prix": 2, "uniter":"unité"},
+    {"nom":"sucre", "prix": 5, "uniter":"kilo"},
+    {"nom":"chocolat", "prix": 5, "uniter":"gramme"},
+    {"nom":"levure", "prix": 4, "uniter":"gramme"}
+]

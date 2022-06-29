@@ -1,0 +1,156 @@
+\hypertarget{classLsceneOpenGL}{}\doxysection{Lscene\+Open\+GL Class Reference}
+\label{classLsceneOpenGL}\index{LsceneOpenGL@{LsceneOpenGL}}
+
+
+Classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}.  
+
+
+
+
+{\ttfamily \#include $<$Lscene\+Open\+G\+L.\+hpp$>$}
+
+
+
+Collaboration diagram for Lscene\+Open\+GL\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLsceneOpenGL_a63a4f8669f976a98dafc661bcc7a1cc7}{Lscene\+Open\+GL}} (std\+::string titre\+Fenetre, unsigned short int largeur\+Fenetre, unsigned short int hauteur\+Fenetre, unsigned char \+\_\+proc\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLsceneOpenGL_a22620e5160beb1b3ae51ac87f3d37c00}{$\sim$\+Lscene\+Open\+GL}} ()
+\begin{DoxyCompactList}\small\item\em destructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLsceneOpenGL_aaec1667f0017f4057378a6ef1dda4b78}{initialiser\+Fenetre}} ()
+\begin{DoxyCompactList}\small\item\em initialisation des paramètres de la fenetre S\+DL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLsceneOpenGL_ac2e90fbbbe1413e6411ee754da91040c}{init\+GL}} ()
+\begin{DoxyCompactList}\small\item\em initialisation des paramètres d\textquotesingle{}open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLsceneOpenGL_a88a9e95ac21bdf9d1d603a1638ada9a3}{boucle\+Principale}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_afd3a51445c4d72fdb3cfaafd34712ba4}\label{classLsceneOpenGL_afd3a51445c4d72fdb3cfaafd34712ba4}} 
+void {\bfseries Draw} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a5d352ce12b9dc7cbd22e9fb128b7a115}\label{classLsceneOpenGL_a5d352ce12b9dc7cbd22e9fb128b7a115}} 
+std\+::string {\bfseries m\+\_\+titre\+Fenetre}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a3a72a36231d108aa4da9cfbe584f353b}\label{classLsceneOpenGL_a3a72a36231d108aa4da9cfbe584f353b}} 
+unsigned short int {\bfseries m\+\_\+largeur\+Fenetre}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_ab34f2bff8a21d5619d8d2567f0980878}\label{classLsceneOpenGL_ab34f2bff8a21d5619d8d2567f0980878}} 
+unsigned short int {\bfseries m\+\_\+hauteur\+Fenetre}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a401abe67732ee07c2e79a087665c1152}\label{classLsceneOpenGL_a401abe67732ee07c2e79a087665c1152}} 
+unsigned char {\bfseries proc\+\_\+id}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a4cae1af5dde4c5e3c9da5379ff35cdfa}\label{classLsceneOpenGL_a4cae1af5dde4c5e3c9da5379ff35cdfa}} 
+bool {\bfseries etat} = true
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_ab337269d9253217d615b1e7416e60bee}\label{classLsceneOpenGL_ab337269d9253217d615b1e7416e60bee}} 
+\mbox{\hyperlink{classObjet}{Objet}} $\ast$ {\bfseries my\+Obect}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a69220586964dbc2d6d22e610eafa2e68}\label{classLsceneOpenGL_a69220586964dbc2d6d22e610eafa2e68}} 
+unsigned char $\ast$ {\bfseries pixels}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_adf067e85632dad8c6525090a99eef4f0}\label{classLsceneOpenGL_adf067e85632dad8c6525090a99eef4f0}} 
+S\+D\+L\+\_\+\+Window $\ast$ {\bfseries m\+\_\+fenetre}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a426432431ab26a133f8f3610c593e63c}\label{classLsceneOpenGL_a426432431ab26a133f8f3610c593e63c}} 
+S\+D\+L\+\_\+\+G\+L\+Context {\bfseries m\+\_\+contexte\+Open\+GL}
+\item 
+\mbox{\Hypertarget{classLsceneOpenGL_a48521575dc55134d2dd55f0dd1543462}\label{classLsceneOpenGL_a48521575dc55134d2dd55f0dd1543462}} 
+S\+D\+L\+\_\+\+Event {\bfseries evenements}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. 
+
+Cette classe permet d\textquotesingle{}aficher une fenetre S\+DL qui va contenir une parti de l\textquotesingle{}objet 3D 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLsceneOpenGL_a63a4f8669f976a98dafc661bcc7a1cc7}\label{classLsceneOpenGL_a63a4f8669f976a98dafc661bcc7a1cc7}} 
+\index{LsceneOpenGL@{LsceneOpenGL}!LsceneOpenGL@{LsceneOpenGL}}
+\index{LsceneOpenGL@{LsceneOpenGL}!LsceneOpenGL@{LsceneOpenGL}}
+\doxysubsubsection{\texorpdfstring{LsceneOpenGL()}{LsceneOpenGL()}}
+{\footnotesize\ttfamily Lscene\+Open\+G\+L\+::\+Lscene\+Open\+GL (\begin{DoxyParamCaption}\item[{std\+::string}]{titre\+Fenetre,  }\item[{unsigned short int}]{largeur\+Fenetre,  }\item[{unsigned short int}]{hauteur\+Fenetre,  }\item[{unsigned char}]{\+\_\+proc\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titre\+Fenetre} & une chaine de caractère qui correspond au titre de la fenetre. \\
+\hline
+{\em largeur\+Fenetre} & un unsigned short int qui correspond a la largeur de la fenetre. \\
+\hline
+{\em hauteur\+Fenetre} & un unsigned short int qui correspond a la hauteur de la fenetre. \\
+\hline
+{\em \+\_\+proc\+\_\+id} & c\textquotesingle{}est un unsigned char qui correspond au processus d\textquotesingle{}\mbox{\hyperlink{classOpenMPI}{Open\+M\+PI}} ou appartient la fenetre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classLsceneOpenGL_a22620e5160beb1b3ae51ac87f3d37c00}{$\sim$\+Lscene\+Open\+G\+L()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classLsceneOpenGL_a22620e5160beb1b3ae51ac87f3d37c00}\label{classLsceneOpenGL_a22620e5160beb1b3ae51ac87f3d37c00}} 
+\index{LsceneOpenGL@{LsceneOpenGL}!````~LsceneOpenGL@{$\sim$LsceneOpenGL}}
+\index{````~LsceneOpenGL@{$\sim$LsceneOpenGL}!LsceneOpenGL@{LsceneOpenGL}}
+\doxysubsubsection{\texorpdfstring{$\sim$LsceneOpenGL()}{~LsceneOpenGL()}}
+{\footnotesize\ttfamily Lscene\+Open\+G\+L\+::$\sim$\+Lscene\+Open\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructeur de la classe \mbox{\hyperlink{classLsceneOpenGL}{Lscene\+Open\+GL}} 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classLsceneOpenGL_a63a4f8669f976a98dafc661bcc7a1cc7}{Lscene\+Open\+G\+L()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLsceneOpenGL_a88a9e95ac21bdf9d1d603a1638ada9a3}\label{classLsceneOpenGL_a88a9e95ac21bdf9d1d603a1638ada9a3}} 
+\index{LsceneOpenGL@{LsceneOpenGL}!bouclePrincipale@{bouclePrincipale}}
+\index{bouclePrincipale@{bouclePrincipale}!LsceneOpenGL@{LsceneOpenGL}}
+\doxysubsubsection{\texorpdfstring{bouclePrincipale()}{bouclePrincipale()}}
+{\footnotesize\ttfamily void Lscene\+Open\+G\+L\+::boucle\+Principale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Boucle principal de la fenetre S\+DL ou l\textquotesingle{}on gère les évènements de la fenetre , l\textquotesingle{}affichage de l\textquotesingle{}objet avec la classe objet . \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classLsceneOpenGL_aaec1667f0017f4057378a6ef1dda4b78}{initialiser\+Fenetre()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classLsceneOpenGL_ac2e90fbbbe1413e6411ee754da91040c}\label{classLsceneOpenGL_ac2e90fbbbe1413e6411ee754da91040c}} 
+\index{LsceneOpenGL@{LsceneOpenGL}!initGL@{initGL}}
+\index{initGL@{initGL}!LsceneOpenGL@{LsceneOpenGL}}
+\doxysubsubsection{\texorpdfstring{initGL()}{initGL()}}
+{\footnotesize\ttfamily bool Lscene\+Open\+G\+L\+::init\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialisation des paramètres d\textquotesingle{}open\+GL. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classLsceneOpenGL_aaec1667f0017f4057378a6ef1dda4b78}{initialiser\+Fenetre()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classLsceneOpenGL_aaec1667f0017f4057378a6ef1dda4b78}\label{classLsceneOpenGL_aaec1667f0017f4057378a6ef1dda4b78}} 
+\index{LsceneOpenGL@{LsceneOpenGL}!initialiserFenetre@{initialiserFenetre}}
+\index{initialiserFenetre@{initialiserFenetre}!LsceneOpenGL@{LsceneOpenGL}}
+\doxysubsubsection{\texorpdfstring{initialiserFenetre()}{initialiserFenetre()}}
+{\footnotesize\ttfamily bool Lscene\+Open\+G\+L\+::initialiser\+Fenetre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialisation des paramètres de la fenetre S\+DL. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classLsceneOpenGL_ac2e90fbbbe1413e6411ee754da91040c}{init\+G\+L()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lscene\+Open\+G\+L.\+hpp\item 
+Lscene\+Open\+G\+L.\+cpp\end{DoxyCompactItemize}
