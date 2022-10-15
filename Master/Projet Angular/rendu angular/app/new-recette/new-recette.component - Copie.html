@@ -1,0 +1,50 @@
+
+
+
+
+<form>
+  <div class="form-group">
+    <label for="Nomrecette">Nom de la recette</label>
+    <input type="email"  #Nomrec class="form-control" id="Nomrecette" aria-describedby="emailHelp" placeholder="Nom de la recette">
+  </div>
+  <div class="form-group">
+    <label for="Modecuisson">Mode de cuisson</label>
+    <input  class="form-control" #Modecui id="Modecuisson" placeholder="Mode de cuisson">
+  </div>
+  <div class="form-group">
+    <label for="nbpersonne">Nombre de personne</label>
+    <input class="form-control" #nbpers id="nbpersonne" placeholder="Nombre de personne">
+  </div>
+<!--
+  <form id="ingr">
+
+    <p>
+
+      <select formControlName="country">
+        <option [ngValue]="null" disabled>Select ingredient</option>
+        <option *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+      </select>
+      <label for="exampleInputPassword2">Quantité : </label>
+      <input   id="6" placeholder="Mode de cuisson">
+      <button type="submit" (click)="submit()">Submit</button>
+    </p>
+
+
+  </form>
+  -->
+<div *ngFor="let country of countries" >
+  <div>
+    <input type="checkbox" id={{country.name}} name="scales"
+           >
+    <label for="scales">{{country.name}}</label>
+    <input   id="input{{country.name}}" placeholder="Quantité">
+  </div>
+</div>
+  <button type="submit" (click)="ajoutingr()" class="btn btn-primary">Ajouter ingredient</button>
+  <div id="app"></div>
+  <br>
+  <br>
+
+  <button type="submit" (click)="submit()" class="btn btn-primary">Submit</button>
+</form>
+
